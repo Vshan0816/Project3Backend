@@ -1,5 +1,5 @@
-class Studio < ActiveRecord::Base
-    # has_many : animes
-    # validates :name, presence: true
+class Studio < ApplicationRecord
+    has_many : animes
+    validates :name, presence: true
     
 end
