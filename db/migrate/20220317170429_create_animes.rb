@@ -1,12 +1,12 @@
-class CreateMangas < ActiveRecord::Migration
+class CreateAnimes < ActiveRecord::Migration
   def change
-    create_table :mangas do |t|
+    create_table :animes do |t|
       t.string :title
       t.text :synopsis
-      t.string :character_list
       t.integer :release_year
+      t.integer :total_episodes
       t.string :image_url
-      t.belongs_to :author
+      t.belongs_to :studio
 
       t.timestamps null: false
     end
