@@ -14,5 +14,6 @@ end
 use Rack::JSONBodyParser
 
 run ApplicationController
+use StudiosController
 use AnimesController
 

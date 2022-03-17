@@ -4,7 +4,7 @@ class CreateAnimes < ActiveRecord::Migration
       t.string :title
       t.text :synopsis
       t.integer :release_year
-      t.integer :total_episodes
+      t.integer :total_seasons
       t.string :image_url
       t.belongs_to :studio
 
