@@ -23,7 +23,6 @@ class StudiosController < ApplicationController
     else
       {errors: "Record not found with id #{params['id']}"}.to_json
     end
-  
   end
 
 
@@ -48,7 +47,7 @@ class StudiosController < ApplicationController
       {errors: "Record not found with id #{params['id']}"}.to_json
     end
   end
-end
+
 
 private
 
