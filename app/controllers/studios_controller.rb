@@ -39,7 +39,7 @@ class StudiosController < ApplicationController
   end
 
   # DELETE: /studios/5/delete
-  delete "/studios/:id/delete" do
+  delete "/studios/:id" do
     find_studio
     if @studio&.destroy
       {messages: "Record successfully destroyed"}.to_json

@@ -41,7 +41,7 @@ class AnimesController < ApplicationController
   end
 
   # DELETE: /animes/5/delete
-  delete "/animes/:id/delete" do
+  delete "/animes/:id" do
     find_anime
     if @anime&.destroy
       {messages: "Record successfully destroyed"}.to_json
