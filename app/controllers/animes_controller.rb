@@ -8,11 +8,19 @@ class AnimesController < ApplicationController
 
   # POST: /animes
   post "/animes" do
-    @anime = Anime.create(params)
-    if @anime.id
-      serialized_anime
+    #try to find the studio with the info in the params
+    binding.pry #(make sure you know under what key the studio name is)
+    studio = Studio.find_by_name(params[:studio])
+    if studio 
+      @anime = studio.animes.create(year_founded: params[:year_founded])
+        # @anime = Anime.create(params)
+      if @anime.id
+        serialized_anime
+      else
+        @anime.errors.full_messages.to_sentence
+      end
     else
-      @anime.errors.full_messages.to_sentence
+      {error: "The studio doesn't exist"}.to_json
     end
   end
 
