@@ -9,11 +9,10 @@ class AnimesController < ApplicationController
   # POST: /animes
   post "/animes" do
     #try to find the studio with the info in the params
-    binding.pry #(make sure you know under what key the studio name is)
+    # binding.pry #(make sure you know under what key the studio name is)
     studio = Studio.find_by_name(params[:studio])
     if studio 
-      @anime = studio.animes.create(year_founded: params[:year_founded])
-        # @anime = Anime.create(params)
+      @anime = studio.animes.create(title: params[:title], synopsis: params[:synopsis], release_year: params[:release_year], total_seasons: params[:total_seasons], image_url: params[:image_url] )
       if @anime.id
         serialized_anime
       else
